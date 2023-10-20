@@ -4,7 +4,7 @@ function generatePassword() {
   const uppercaseCharacters =['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
   const lowercaseCharacters =['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
   const specialCharacters =['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
-  const possibleCHaracters=[];
+  const possibleCharacters=[];
 
   numberOfCharacters = prompt("How many characters long would you like your password to be? Choose between 8-128 characters.");
   if (numericCharacters < 8 || numberOfCharacters > 128){
@@ -47,6 +47,18 @@ if (hasLowercase === false && hasUppercase === false && hasNumbers === false && 
   return "You must include one character type. Please pick at least one character type.";
 };
 
+if(hasLowercase) {
+  possibleCharacters = possibleCharacters.concat(lowercaseCharacters);
+}
+if(hasUppercase) {
+  possibleCharacters = possibleCharacters.concat(uppercaseCharacters);
+}
+if(hasNumbers) {
+  possibleCharacters = possibleCharacters.concat(hasNumbers);
+}
+if(hasSpecial) {
+  possibleCharacters = possibleCharacters.concat(hasSpecial);
+}
 
  
 const generateBtn = document.querySelector("#generate");
