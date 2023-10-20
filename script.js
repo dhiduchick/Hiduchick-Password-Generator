@@ -7,7 +7,7 @@ function generatePassword() {
   const possibleCHaracters=[];
 
   numberOfCharacters = prompt("How many characters long would you like your password to be? Choose between 8-128 characters.");
-  if (numericCharacters < 8 \\ numberOfCharacters > 128){
+  if (numericCharacters < 8 || numberOfCharacters > 128){
     return "Passwork must be between 8-128 characters, please choose a valid number of characters.";
   } else if (isNaN(numberOfCharacters)) {
     numberOfCharacters = prompt ("Please enter a valid number.");
