@@ -60,7 +60,15 @@ if(hasSpecial) {
   possibleCharacters = possibleCharacters.concat(hasSpecial);
 }
 
- 
+ let finalPassword = ''
+ for (let i=0; i<numberOfCharacters; i++) {
+  let rng=[Math.floor(Math.random() * possibleCharacters.length)];
+  finalPassword = finalPassword + possibleCharacters[rng];
+ }
+ return finalPassword;
+};
+
+
 const generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
